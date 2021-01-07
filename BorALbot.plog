@@ -1,0 +1,185 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Solution_Path">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="SolutionPath" type="xs:string" minOccurs="0" />
+                <xs:element name="SolutionVersion" type="xs:string" minOccurs="0" />
+                <xs:element name="PlogVersion" type="xs:unsignedInt" minOccurs="0" />
+                <xs:element name="ModificationDate" msdata:DateTimeMode="Utc" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="PVS-Studio_Analysis_Log">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="FavIcon" type="xs:boolean" minOccurs="0" msdata:Ordinal="0" />
+                <xs:element name="Level" type="xs:unsignedInt" minOccurs="0" msdata:Ordinal="1" />
+                <xs:element name="DefaultOrder" type="xs:int" minOccurs="0" msdata:Ordinal="2" />
+                <xs:element name="ErrorCode" type="xs:string" minOccurs="0" msdata:Ordinal="3" />
+                <xs:element name="Message" type="xs:string" msdata:Ordinal="4" />
+                <xs:element name="Project" type="xs:string" minOccurs="0" msdata:Ordinal="5" />
+                <xs:element name="ShortFile" type="xs:string" minOccurs="0" msdata:Ordinal="6" />
+                <xs:element name="Line" type="xs:int" msdata:Ordinal="7" />
+                <xs:element name="FalseAlarm" type="xs:boolean" minOccurs="0" msdata:Ordinal="8" />
+                <xs:element name="File" type="xs:string" msdata:Ordinal="9" />
+                <xs:element name="CodePrev" type="xs:unsignedInt" minOccurs="0" msdata:Ordinal="10" />
+                <xs:element name="CodeCurrent" type="xs:unsignedInt" minOccurs="0" msdata:Ordinal="11" />
+                <xs:element name="CodeNext" type="xs:unsignedInt" minOccurs="0" msdata:Ordinal="12" />
+                <xs:element name="TrialMessage" type="xs:boolean" minOccurs="0" msdata:Ordinal="13" />
+                <xs:element name="Analyzer" type="xs:int" minOccurs="0" msdata:Ordinal="14" />
+                <xs:element name="LineExtension" type="xs:string" minOccurs="0" msdata:Ordinal="15" />
+                <xs:element name="Retired" type="xs:boolean" default="false" minOccurs="0" msdata:Ordinal="16" />
+                <xs:element name="AnalyzedSourceFiles" type="xs:string" minOccurs="0" msdata:Ordinal="17" />
+                <xs:element name="CWECode" type="xs:string" minOccurs="0" msdata:Ordinal="18" />
+                <xs:element name="MISRA" type="xs:string" minOccurs="0" msdata:Ordinal="19" />
+              </xs:sequence>
+              <xs:attribute name="ErrorCodeNumeric" msdata:ReadOnly="true" msdata:Expression="IIF(LEN(ErrorCode) &lt; 2 OR (SUBSTRING(ErrorCode, 1, 1) &lt;&gt; 'V'), 0, CONVERT(SUBSTRING(ErrorCode, 2, LEN(ErrorCode) - 1), 'System.UInt32'))" type="xs:unsignedInt" use="prohibited" />
+              <xs:attribute name="CWECodeNumeric" msdata:ReadOnly="true" msdata:Expression="ISNULL(IIF(LEN(CWECode) &lt; 4 + 1 OR (SUBSTRING(CWECode, 1, 4) &lt;&gt; 'CWE-'), 4294967295, CONVERT(SUBSTRING(CWECode, 4 + 1, LEN(CWECode) - 4), 'System.UInt32')), 4294967295)" type="xs:unsignedInt" use="prohibited" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//PVS-Studio_Analysis_Log" />
+        <xs:field xpath="Line" />
+        <xs:field xpath="Message" />
+        <xs:field xpath="File" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <Solution_Path>
+    <SolutionPath>H:\Projects\BAL telega bot\BorALbot\BorALbot.sln</SolutionPath>
+    <SolutionVersion>16.0</SolutionVersion>
+    <PlogVersion>5</PlogVersion>
+    <ModificationDate>2020-08-10T12:18:34.6734326Z</ModificationDate>
+  </Solution_Path>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>1</DefaultOrder>
+    <ErrorCode>V3063</ErrorCode>
+    <Message>A part of conditional expression is always true if it is evaluated: userInformation != null.</Message>
+    <Project>BalTelegramBot</Project>
+    <ShortFile>MessageController.cs</ShortFile>
+    <Line>97</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>H:\Projects\BAL telega bot\BorALbot\BalTelegramBot\Controllers\MessageController.cs</File>
+    <CodePrev>1283153252</CodePrev>
+    <CodeCurrent>3160714875</CodeCurrent>
+    <CodeNext>123</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+    <CWECode>CWE-571</CWECode>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>2</DefaultOrder>
+    <ErrorCode>V3063</ErrorCode>
+    <Message>A part of conditional expression is always true if it is evaluated: userInformation != null.</Message>
+    <Project>BalTelegramBot</Project>
+    <ShortFile>MessageController.cs</ShortFile>
+    <Line>110</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>H:\Projects\BAL telega bot\BorALbot\BalTelegramBot\Controllers\MessageController.cs</File>
+    <CodePrev>2068883728</CodePrev>
+    <CodeCurrent>3076264938</CodeCurrent>
+    <CodeNext>234024602</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+    <CWECode>CWE-571</CWECode>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>3</DefaultOrder>
+    <ErrorCode>V3080</ErrorCode>
+    <Message>Possible null dereference. Consider inspecting 'user'.</Message>
+    <Project>BalTelegramBot</Project>
+    <ShortFile>InlineKeyboardCommand.cs</ShortFile>
+    <Line>81</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>H:\Projects\BAL telega bot\BorALbot\BalTelegramBot\Models\Commands\InlineKeyboardCommand.cs</File>
+    <CodePrev>1653887041</CodePrev>
+    <CodeCurrent>3061958151</CodeCurrent>
+    <CodeNext>5607</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+    <CWECode>CWE-476</CWECode>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>4</DefaultOrder>
+    <ErrorCode>V3137</ErrorCode>
+    <Message>The 'responceMessage' variable is assigned but is not used by the end of the function.</Message>
+    <Project>BalTelegramBot</Project>
+    <ShortFile>RegistrationState.cs</ShortFile>
+    <Line>131</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>H:\Projects\BAL telega bot\BorALbot\BalTelegramBot\Models\Commands\Registration State Machine\RegistrationState.cs</File>
+    <CodePrev>123</CodePrev>
+    <CodeCurrent>2928760151</CodeCurrent>
+    <CodeNext>83995441</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension />
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+    <CWECode>CWE-563</CWECode>
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>5</DefaultOrder>
+    <ErrorCode>V3139</ErrorCode>
+    <Message>Two or more case-branches perform the same actions.</Message>
+    <Project>BalTelegramBot</Project>
+    <ShortFile>Scheduler.cs</ShortFile>
+    <Line>327</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>H:\Projects\BAL telega bot\BorALbot\BalTelegramBot\Models\Commands\Scheduler\Scheduler.cs</File>
+    <CodePrev>1104594</CodePrev>
+    <CodeCurrent>88539</CodeCurrent>
+    <CodeNext>274898</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension>327,329</LineExtension>
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+  <PVS-Studio_Analysis_Log>
+    <FavIcon>false</FavIcon>
+    <Level>2</Level>
+    <DefaultOrder>6</DefaultOrder>
+    <ErrorCode>V3139</ErrorCode>
+    <Message>Two or more case-branches perform the same actions.</Message>
+    <Project>BalTelegramBot</Project>
+    <ShortFile>Scheduler.cs</ShortFile>
+    <Line>435</Line>
+    <FalseAlarm>false</FalseAlarm>
+    <File>H:\Projects\BAL telega bot\BorALbot\BalTelegramBot\Models\Commands\Scheduler\Scheduler.cs</File>
+    <CodePrev>1104594</CodePrev>
+    <CodeCurrent>88539</CodeCurrent>
+    <CodeNext>274898</CodeNext>
+    <TrialMessage>false</TrialMessage>
+    <Analyzer>4</Analyzer>
+    <LineExtension>435,437</LineExtension>
+    <Retired>false</Retired>
+    <AnalyzedSourceFiles />
+  </PVS-Studio_Analysis_Log>
+</NewDataSet>
